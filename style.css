@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Alice&family=Bebas+Neue&family=Roboto&family=Lora&family=Playfair+Display&family=Cormorant+Garamond&family=Libre+Baskerville&family=Pompiere&family=Simonetta&family=Inria+Serif&display=swap');
+
+body{
+  background:white;
+  font-family:Poppins, sans-serif;
+  padding:20px;
+}
+
+h1{text-align:center}
+
+/* MALLA */
+
+#malla{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+}
+
+.semestre{
+  min-width:220px;
+  padding:12px;
+  border-radius:18px;
+}
+
+.ramo{
+  background:white;
+  padding:8px;
+  margin:6px 0;
+  border-radius:12px;
+  border:1px solid #999;
+  cursor:pointer;
+}
+
+.ramo.aprobado{background:#d1fae5}
+.ramo.bloqueado{background:#eee;color:#777}
+
+/* COLORES POR SEMESTRE */
+
+.semestre[data-sem="1"]{background:#BB99FF}
+.semestre[data-sem="2"]{background:#81A0FF}
+.semestre[data-sem="3"]{background:#9EDFFB}
+.semestre[data-sem="4"]{background:#9EFBD1}
+.semestre[data-sem="5"]{background:#B3FB9E}
+.semestre[data-sem="6"]{background:#F1FF99}
+.semestre[data-sem="7"]{background:#FBDE9E}
+.semestre[data-sem="8"]{background:#FB9E9E}
+.semestre[data-sem="9"]{background:#FB9ED3}
+.semestre[data-sem="10"]{background:#FF8FFB}
+
+/* FUENTES */
+
+.font-poppins{font-family:Poppins}
+.font-alice{font-family:Alice}
+.font-bebas{font-family:Bebas Neue}
+.font-roboto{font-family:Roboto}
+.font-lora{font-family:Lora}
+.font-playfair{font-family:Playfair Display}
+.font-cormorant{font-family:Cormorant Garamond}
+.font-libre{font-family:Libre Baskerville}
+.font-pompiere{font-family:Pompiere}
+.font-simonetta{font-family:Simonetta}
+.font-inria{font-family:Inria Serif}
+.font-times{font-family:"Times New Roman",serif}
