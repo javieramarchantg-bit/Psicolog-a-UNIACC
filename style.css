@@ -1,53 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Alice&family=Bebas+Neue&family=Roboto&family=Lora&family=Playfair+Display&family=Cormorant+Garamond&family=Libre+Baskerville&family=Pompiere&family=Simonetta&family=Inria+Serif&display=swap');
 
+/* ===== BODY ===== */
+
 body{
   background:white;
   font-family:Poppins, sans-serif;
   padding:20px;
+  color:#1e293b;
+  transition: all 0.3s ease;
 }
 
-h1{text-align:center}
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
 
-/* MALLA */
+/* ===== CONTROLES ===== */
+
+select{
+  padding:6px 10px;
+  border-radius:10px;
+  margin-bottom:15px;
+  border:1px solid #999;
+}
+
+/* ===== MALLA ===== */
 
 #malla{
   display:flex;
-  gap:14px;
+  gap:16px;
   overflow-x:auto;
+  padding-bottom:20px;
 }
+
+/* ===== SEMESTRES ===== */
 
 .semestre{
   min-width:220px;
   padding:12px;
   border-radius:18px;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
 }
+
+.semestre h2{
+  text-align:center;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+/* ===== RAMOS ===== */
 
 .ramo{
   background:white;
   padding:8px;
   margin:6px 0;
   border-radius:12px;
-  border:1px solid #999;
+  border:1px solid rgba(0,0,0,.3);
   cursor:pointer;
+  transition: background .3s ease;
 }
 
-.ramo.aprobado{background:#d1fae5}
-.ramo.bloqueado{background:#eee;color:#777}
+.ramo.bloqueado{
+  background:#f1f5f9;
+  color:#64748b;
+  cursor:not-allowed;
+}
 
-/* COLORES POR SEMESTRE */
+/* ===== COLORES POR SEMESTRE + SELECCION ===== */
 
-.semestre[data-sem="1"]{background:#BB99FF}
-.semestre[data-sem="2"]{background:#81A0FF}
-.semestre[data-sem="3"]{background:#9EDFFB}
-.semestre[data-sem="4"]{background:#9EFBD1}
-.semestre[data-sem="5"]{background:#B3FB9E}
-.semestre[data-sem="6"]{background:#F1FF99}
-.semestre[data-sem="7"]{background:#FBDE9E}
-.semestre[data-sem="8"]{background:#FB9E9E}
-.semestre[data-sem="9"]{background:#FB9ED3}
-.semestre[data-sem="10"]{background:#FF8FFB}
+/* SEMESTRE 1 */
+.semestre[data-sem="1"]{background:#BB99FF;}
+.semestre[data-sem="1"] .ramo.aprobado{background:#ECE3FF;}
 
-/* FUENTES */
+/* SEMESTRE 2 */
+.semestre[data-sem="2"]{background:#81A0FF;}
+.semestre[data-sem="2"] .ramo.aprobado{background:#B0C4FF;}
+
+/* SEMESTRE 3 */
+.semestre[data-sem="3"]{background:#9EDFFB;}
+.semestre[data-sem="3"] .ramo.aprobado{background:#E3FAFF;}
+
+/* SEMESTRE 4 */
+.semestre[data-sem="4"]{background:#9EFBD1;}
+.semestre[data-sem="4"] .ramo.aprobado{background:#E3FFF4;}
+
+/* SEMESTRE 5 */
+.semestre[data-sem="5"]{background:#B3FB9E;}
+.semestre[data-sem="5"] .ramo.aprobado{background:#E7FFE3;}
+
+/* SEMESTRE 6 */
+.semestre[data-sem="6"]{background:#F1FF99;}
+.semestre[data-sem="6"] .ramo.aprobado{background:#FDFFE3;}
+
+/* SEMESTRE 7 */
+.semestre[data-sem="7"]{background:#FBDE9E;}
+.semestre[data-sem="7"] .ramo.aprobado{background:#FFF5E3;}
+
+/* SEMESTRE 8 */
+.semestre[data-sem="8"]{background:#FB9E9E;}
+.semestre[data-sem="8"] .ramo.aprobado{background:#FFE3E3;}
+
+/* SEMESTRE 9 */
+.semestre[data-sem="9"]{background:#FB9ED3;}
+.semestre[data-sem="9"] .ramo.aprobado{background:#FFE3F6;}
+
+/* SEMESTRE 10 */
+.semestre[data-sem="10"]{background:#FF8FFB;}
+.semestre[data-sem="10"] .ramo.aprobado{background:#FFB6FC;}
+
+/* ===== FUENTES ===== */
 
 .font-poppins{font-family:Poppins}
 .font-alice{font-family:Alice}
@@ -61,3 +122,14 @@ h1{text-align:center}
 .font-simonetta{font-family:Simonetta}
 .font-inria{font-family:Inria Serif}
 .font-times{font-family:"Times New Roman",serif}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:700px){
+  #malla{
+    flex-direction:column;
+  }
+  .semestre{
+    min-width:100%;
+  }
+}
