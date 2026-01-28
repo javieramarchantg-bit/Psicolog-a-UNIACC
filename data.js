@@ -66,14 +66,28 @@ const ramos = [
 { nombre:"Formación general VI", semestre:8 },
 
 /* SEMESTRE 9 */
-{ nombre:"Seminario de título y ética profesional", semestre:9 },
-{ nombre:"Taller de integración profesional I", semestre:9 },
-{ nombre:"Intervenciones en adicciones", semestre:9, requisitos:["Evaluación psicológica infanto-juvenil","Ética para psicólogos","Evaluación psicológica adultos"] },
-{ nombre:"Intervenciones en violencia", semestre:9, requisitos:["Evaluación psicológica infanto-juvenil","Ética para psicólogos","Evaluación psicológica adultos"] },
-{ nombre:"Psicogerontología", semestre:9, requisitos:["Evaluación psicológica adultos"] },
+{ 
+  nombre:"Seminario de título y ética profesional", 
+  semestre:9, 
+  requisitos: ramos.filter(r => r.semestre <= 8).map(r => r.nombre)
+},
+
+{ 
+  nombre:"Taller de integración profesional I", 
+  semestre:9, 
+  requisitos: ramos.filter(r => r.semestre <= 8).map(r => r.nombre)
+},
+
 
 /* SEMESTRE 10 */
-{ nombre:"Taller de integración profesional II", semestre:10 },
-{ nombre:"Taller de titulación", semestre:10 }
+{ 
+  nombre:"Taller de integración profesional II", 
+  semestre:10, 
+  requisitos:["Taller de integración profesional I"]
+},
 
-];
+{ 
+  nombre:"Taller de titulación", 
+  semestre:10, 
+  requisitos: ramos.map(r => r.nombre)
+}
