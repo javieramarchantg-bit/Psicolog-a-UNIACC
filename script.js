@@ -10,8 +10,18 @@ ramos.forEach(r=>{
 });
 
 function puedeTomar(r){
- if(!r.requisitos) return true;
- return r.requisitos.every(req=>aprobados.includes(req));
+
+  if(r.requiereTodo){
+    return ramos
+      .filter(x => x.nombre !== r.nombre)
+      .every(x => aprobados.includes(x.nombre));
+  }
+
+  if(r.requisitos){
+    return r.requisitos.every(req => aprobados.includes(req));
+  }
+
+  return true;
 }
 
 function render(){
